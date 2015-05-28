@@ -42,7 +42,7 @@ class Sonata extends Application
         //$this->register(new Provider\SecurityServiceProvider());
         //$this->register(new Provider\RememberMeServiceProvider());
         $this->register(new Provider\ServiceControllerServiceProvider());
-        $this->register(new Provider\WebProfilerServiceProvider());
+        //$this->register(new Provider\WebProfilerServiceProvider());
 
         $this->extend('twig.loader', function(\Twig_Loader_Chain $twig_loader_chain, $app){
             if(!isset($app['twig.paths']))

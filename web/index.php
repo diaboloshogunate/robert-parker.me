@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 $sonata = new Sonata();
-$sonata->apply($sonata->load('../config/dev.yaml', false));
+$sonata->apply($sonata->load('../config/live.yaml', false));
 
 $sonata->get('/', function(Application $app){
     $response = new Response($app['twig']->render('@app/home.html.twig', ['title' => 'Web Design and Development in Portland OR']));

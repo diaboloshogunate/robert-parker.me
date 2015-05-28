@@ -1,0 +1,29 @@
+debug: false
+twig.path: ../app
+twig.paths:
+    app: ../app/views
+twig.options:
+    debug: false
+    cache: ../var/twig
+    auto_reload: false
+    strict_variables: true
+http_cache.cache_dir: ../var/http
+swiftmailer.options:
+    host: smtp.mandrillapp.com
+    port: 587
+    username: rparker@yamiko.ninja
+    password: ZEiDkJ0npNuaS5tf9et_9w
+monolog.logfile: ../var/log/monolog.log
+monolog.level: ERROR
+db.options:
+    driver: pdo_mysql
+    host: localhost
+    dbname: ~
+    user: ~
+    password: ~
+    charset: utf8
+locale_fallbacks: [ en ]
+profiler.enable: false
+profiler.cache_dir: ../var/profiler
+profiler.mount_prefix: /admin/profiler
+asset_path: http://robert-parker.me/
