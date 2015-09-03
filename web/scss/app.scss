@@ -92,12 +92,6 @@ header.content {
     color: darken(#DEC4A8, 20%);
     text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.6);
   }
-  .skills {
-
-    @media #{$medium-up} {
-      margin-bottom: 0px;
-    }
-  }
   a {
     position: relative;
     img{
@@ -152,5 +146,19 @@ header.content {
       width: 100% !important;
       height: 100% !important;
     }
+  }
+}
+
+#skills {
+  text-align: center;
+  h2 { margin-bottom: 1.25rem; }
+  p:last-of-type { margin-bottom: 0rem; }
+  h2, p:last-of-type { text-align: center; }
+  .inline-center {
+    text-align: left;
+    display: inline-block;
+  }
+  @media #{$medium-up} {
+    margin-bottom: 0px;
   }
 }

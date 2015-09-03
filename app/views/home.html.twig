@@ -16,8 +16,8 @@
                     <li><a href="https://www.linkedin.com/in/yamikoninja" target="_blank"><i class="fa fa-linkedin"></i> <span>Linked In</span></a></li>
                     <li><a href="https://github.com/yamiko-ninja" target="_blank"><i class="fa fa-github"></i> <span>Github</span></a></li>
                     <li><a href="https://twitter.com/yamiko_ninja" target="_blank"><i class="fa fa-twitter"></i> <span>Twitter</span></a></li>
-                    <li><a href="https://www.youtube.com/channel/UCpX-JWACNzzpFGXDwKysoLg" target="_blank"><i class="fa fa-youtube-play"></i> <span>Youtube</span></a></li>
-                    <li><a href="{{ app.asset_path }}resume.pdf"><i class="fa fa-file-text"></i> <span>Resume</span></a></li>
+                    {#<li><a href="https://www.youtube.com/channel/UCpX-JWACNzzpFGXDwKysoLg" target="_blank"><i class="fa fa-youtube-play"></i> <span>Youtube</span></a></li>#}
+                    <li><a href="{{ app.asset_path }}resume.pdf" target="_blank"><i class="fa fa-file-text"></i> <span>Resume</span></a></li>
                     <li><a href="mailto:rparker@yamiko.ninja"><i class="fa fa-envelope"></i> <span>Email</span></a></li>
                 </ul>
             </section>
@@ -36,9 +36,9 @@
     <header class="content text-center" id="header">
         <div class="row">
             <div class="medium-12 columns">
-                <h1>Hello Humans</h1>
-                <p><em>My name is Robert Parker and I live in Portland OR.</em></p>
-                <p>I enjoy finding solutions to new challenging problems.</p>
+                <h1>{% raw %}Hello {{ name }}{% endraw %}</h1>
+                <p><em>My name is Robert Parker and I am a web applications developer in Portland OR.</em></p>
+                <p>I enjoy finding solutions to new and challenging problems.</p>
             </div>
         </div>
     </header>
@@ -46,18 +46,45 @@
     <section class="content" id="skills">
         <div class="row">
             <div class="medium-12 columns">
-                <h2>Skills</h2>
-                <p>
-                    PHP, Silex, Symfony, PHP Unit, Doctrine, MySQL, Twig, Drupal, Wordpress,
-                    Virtual Box, Vagrant, Puppet, Cent OS, Apache, Varnish, Nginx, Memcached,
-                    Git, Grunt, Composer, Bower, Drush, RVM,
-                    Javascript, jQuery, Google Charts,
-                    Foundation, Sass, Less
-                </p>
-                <p class="skills">
-                    <em>I am also familiar with C#, C++, Java, Go and can learn anything else up with ease.</em>
-                </p>
+                <div class="inline-center">
+                    <h2>Skills</h2>
+                    <p>
+                        <b>Backend: </b> MySQL, PHP, Symfony, Silex, Drupal, WordPress, Doctrine, PHP Unit, Twig, <br />
+                        <b>Frontend: </b>Javascript, jQuery, Google Charts, Foundation, Bootstrap, Sass, Less<br />
+                        <b>Server: </b> Cent OS, Puppet, Vagrant, virtual Box, Apache, Nginx, Varnish, <br />
+                        <b>Tools: </b> Git, Grunt, Composer, Bower, Drush, RVM, <br />
+                        <b>Software: </b> MS Word, Adobe Photoshop, Adobe Illustrator, PhpStorm, NetBeans
+                    </p>
+                    <p class="skills">
+                        <em>I am also familiar with C# and ruby.</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="content portfolio">
+        <div class="row">
+            <div class="medium-6 push-6 columns">
+                <h2>Pocket Key</h2>
+                <p>
+                    Pocket Key has a device that allows you to securely make transactions online.
+                    The goal of the website is to inform users of Pocket Key and allow them to pre order one.
+                    The pre order form is a custom WordPress plugin that has CSRF protection and submits with AJAX.
+                    After the initial form submission a confirmation email is sent to the user through sendgrid.
+                    They then get a second form to select a color and the option to share on social media platforms.
+                    The various settings are managed with a settings page and the submissions can be viewed on a submissions page.
+                    On the submissions page an overview is displayed with the google charts api and the individual submissions are in table that can be exported to a CSV file.
+
+                </p>
+                <p class="skills">Skills Used: <em>PHP, MySQL, WordPress, Git, Bower, jQuery, Google Charts, AJAX</em></p>
+            </div>
+            <div class="medium-6 pull-6 columns">
+                <a href="https://www.pocketkey.com/" class="disabled" target="_blank" rel="nofollow">
+                    <img src="{{ app.asset_path }}pocket-key-2015-09-02.png" alt=""/>
+                    <div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -76,7 +103,7 @@
                 <p class="skills">Skills Used: <em>PHP, MySQL, Silex, Git, Foundation, Sass, Grunt, Bower, Composer</em></p>
             </div>
             <div class="medium-6 columns">
-                <a href="#/" class="disabled">
+                <a href="#/" class="disabled" target="_blank" rel="nofollow">
                     <img src="{{ app.asset_path }}thetwosisters-2015-05-06 18-25-32.png" alt=""/>
                     <div>
                     </div>
@@ -96,10 +123,10 @@
                     Additionally I installed modules so they can edit the blocks while on the page.
                     After that I reorganized the Sass stylesheets and made the site responsive.
                 </p>
-                <p class="skills">Skills Used: <em>Drupal, Sass, Git</em></p>
+                <p class="skills">Skills Used: <em>Drupal, Sass, Git, jQuery</em></p>
             </div>
             <div class="medium-6 pull-6 columns">
-                <a href="http://bonsaimirai.com/" target="_blank">
+                <a href="http://bonsaimirai.com/" target="_blank" rel="nofollow">
                     <img src="{{ app.asset_path }}bonsaimirai-2015-05-06 17-38-06.png" alt=""/>
                     <div>
                     </div>
@@ -123,7 +150,7 @@
                 <p class="skills">Skills Used: <em>Drupal, Open Layers, Omega, Sass, Twig, MySQL, Javascript, jquery, Google Maps, Git</em></p>
             </div>
             <div class="medium-6 columns">
-                <a href="http://element-residential.com/" target="_blank">
+                <a href="http://element-residential.com/" target="_blank" rel="nofollow">
                     <img src="{{ app.asset_path }}element-residential-2015-05-06 18-14-07.png" alt=""/>
                     <div>
                     </div>
@@ -145,7 +172,7 @@
                 <p class="skills">Skills Used: <em>PHP, MySQL, Javascript, jquery, Less, Git</em></p>
             </div>
             <div class="medium-6 pull-6 columns">
-                <a href="http://markwestcottpianist.com/" target="_blank">
+                <a href="http://markwestcottpianist.com/" target="_blank" rel="nofollow">
                     <img src="{{ app.asset_path }}markwestcottpianist-2015-05-06 18-20-00.png" alt=""/>
                     <div>
                     </div>
