@@ -1,9 +1,0 @@
-.sass-cache
-.idea
-vendor
-node_modules
-web/bower_components
-var/cache/*
-var/log/*
-var/twig/*
-var/profiler/*
