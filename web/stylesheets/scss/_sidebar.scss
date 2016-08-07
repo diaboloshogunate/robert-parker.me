@@ -1,0 +1,63 @@
+.sidebar {
+  padding: 0;
+  color: $white;
+  width:100%;
+  @include breakpoint(large){
+    max-width: 400px;
+  }
+  a {
+    color: $white;
+  }
+  .progress {
+    background-color: $primary-color;
+    border:1px solid $white;
+  }
+  .progress-meter {
+    background-color: $white;
+  }
+  .progress-meter-text {
+    color: $primary-color;
+    transform: none;
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+}
+
+.profile {
+  position: relative;
+  margin-bottom: $global-margin;
+  .details {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    h3 {
+      margin: 0;
+    }
+    h6 {
+      margin: 0;
+    }
+    li a {
+      padding: 0.5rem;
+      &:hover {
+        color: $anchor-color-hover;
+      }
+    }
+    li:first-of-type a {
+      padding-left: 0;
+    }
+    li:last-of-type a {
+      padding-right: 0;
+    }
+  }
+}
+
+.info {
+  padding: 0 $global-padding;
+  h6 {
+    margin-bottom: $paragraph-margin-bottom/2;
+  }
+  .fa {
+    font-size: 20px;
+  }
+}

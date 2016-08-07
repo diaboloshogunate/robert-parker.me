@@ -1,5 +1,179 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Welcome</h1>
+    <div class="row expanded">
+        <div class="shrink columns bg-primary sidebar">
+            <div class="row">
+                <div class="small-12 medium-6 large-12 columns">
+                    <div class="profile">
+                        <img src="{{ asset('images/src/robert-parker.jpg') }}" alt="">
+                        <div class="details">
+                            <h3 class="name">Robert Parker</h3>
+                            <h6 class="position">Full stack Developer</h6>
+                            <ul class="horizontal menu">
+                                <li><a href="https://github.com/yamiko-ninja" target="_blank"><i class="fa fa-github"></i></a></li>
+                                <li><a href="https://twitter.com/yamiko_ninja" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/yamikoninja" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="{{ asset('downloads/resume.pdf') }}" target="_blank"><i class="fa fa-file-text"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="small-12 medium-6 large-12 columns">
+                    <div class="info">
+                        <div class="row">
+                            <div class="small-2 columns"><i class="fa fa-usd"></i></div>
+                            <div class="small-10 columns">
+                                <p>
+                                    80/hr
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-2 columns"><i class="fa fa-phone"></i></div>
+                            <div class="small-10 columns">
+                                <p>
+                                    <a href="tel:3607730963">504.773.0963</a><br />
+                                    <span>(work)</span>
+                                </p>
+                                <p>
+                                    <a href="tel:3607730963">360.773.0963</a><br />
+                                    <span>(mobile)</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-2 columns"><i class="fa fa-envelope"></i></div>
+                            <div class="small-10 columns">
+                                <p>
+                                    <a href="mailto:rparker@yamiko.ninja">rparker@yamiko.ninja</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-2 columns"><i class="fa fa-home"></i></div>
+                            <div class="small-10 columns">
+                                <p>
+                                    17973 NW Evergreen PKWY<br />
+                                    Unit 100<br />
+                                    Beaverton OR, 97006
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-2 columns"><i class="fa fa-star"></i></div>
+                            <div class="small-10 columns">
+                                <h6>Languages</h6>
+                                <div class="row small-up-1 medium-up-2">
+                                    {% for k,v in languages %}
+                                        <div class="column">
+                                            <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="{{ v }}" aria-valuemax="100">
+                                        <span class="progress-meter" style="width: {{ v }}">
+                                            <p class="progress-meter-text">{{ k }}</p>
+                                        </span>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+
+                                <h6>Technologies</h6>
+                                <div class="row small-up-1 medium-up-2">
+                                    {% for k,v in technologies %}
+                                        <div class="column">
+                                            <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="{{ v }}" aria-valuemax="100">
+                                        <span class="progress-meter" style="width: {{ v }}">
+                                            <p class="progress-meter-text">{{ k }}</p>
+                                        </span>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns content">
+            <div class="primary card navigation">
+                <ul class="horizontal menu" data-magellan>
+                    <li><a href="#introduction">Home</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#work">Work History</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#presentations">Presentations</a></li>
+                </ul>
+            </div>
+            <div class="sections">
+                <div class="hero card" id="introduction">
+                    <h2>Hello,</h2>
+                    <h1>
+                        I'm a <span class="text-primary">Web Applications Developer</span><br />
+                        Located in Portland Oregon
+                    </h1>
+                    <p>
+                        I bring together the latest techniques and technologies with over 5 years of experience
+                        building cutting edge websites and web applications.
+                        I enjoy finding solutions to new and challenging problems.
+                    </p>
+                </div>
+
+                <div class="portfolio card" id="portfolio">
+                    <h2><i class="fa fa-briefcase"></i> Portfolio</h2>
+                    {% for project in projects %}
+                        <div class="project">
+                            <div class="row">
+                                <div class="small-12 medium-8 large-4 columns {% if not loop.index % 2 %}medium-order-2{% endif %}">
+                                    <h4>{{ project.title }} {% if project.url %}- <small><a href="{{ project.url }}">visit</a></small>{% endif %}</h4>
+                                    <div class="description">
+                                        {{ project.description | raw }}
+                                    </div>
+                                </div>
+                                <div class="columns {% if not loop.index % 2 %}medium-order-1{% endif %}">
+                                    <img src="{{ project.image }}" alt="{{ project.title }} screen shot">
+                                </div>
+                            </div>
+                        </div>
+                        {% if not loop.last %}
+                            <hr />
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+                <div class="work card" id="work">
+                    <h2><i class="fa fa-building"></i> Work History</h2>
+                    {% for job in work %}
+                        <div class="job">
+                            <h4>{{ job.position }} @ {{ job.title }}</h4>
+                            <div class="date">{{ job.start }} - {{ job.end }}</div>
+                            <div class="description">
+                                {{ job.description | raw }}
+                            </div>
+                        </div>
+                        {% if not loop.last %}
+                            <hr />
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+                <div class="education card" id="education">
+                    <h2><i class="fa fa-graduation-cap"></i> Education</h2>
+                    <h4>Associates of Applied Technology in Web Design and Development, 2012</h4>
+                    <p>Clark Community College, Vancouver, WA</p>
+                </div>
+
+                <div class="presentations card" id="presentations">
+                    <h2><i class="fa fa-bar-chart"></i> Presentations</h2>
+                    {% for presentation in presentations %}
+                        <h4>{{ presentation.title }} @ {{ presentation.location }}</h4>
+                        <div class="date">{{ presentation.date }}</div>
+                        {% if not loop.last %}
+                            <hr />
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
