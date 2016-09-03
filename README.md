@@ -1,3 +1,21 @@
+Portfolio References
+====================
+
+  * http://patkay.com.au/
+  * http://demo.deviserweb.com/cv/
+  * http://www.atulesh.com/
+  * http://www.caramelbudgie.com/
+  * http://lisher.net/ 
+  * https://weare2ndfloor.com/ 
+  * http://www.zachtaylor.me/
+  
+Card Design
+===========
+
+  * http://patrickcoombe.com/photoshop-create-3d-card-perspective-effect/
+  * http://graphicdesign.stackexchange.com/questions/20597/how-to-achieve-this-3d-card-effect 
+
+
 Symfony Standard Edition
 ========================
 

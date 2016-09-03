@@ -24,12 +24,17 @@ var options = {
         src: [
             'web/libs/jquery/dist/jquery.js',
             'web/libs/foundation-sites/dist/foundation.js',
+            'web/libs/slick-carousel/slick/slick.js',
             'web/scripts/app.js'
         ],
         dist: 'web/scripts'
     },
     styles: {
-        src: 'web/stylesheets/scss/**/*.scss',
+        src: [
+            'web/libs/slick-carousel/slick/slick.css',
+            'web/libs/slick-carousel/slick/slick-theme.css',
+            'web/stylesheets/scss/**/*.scss'
+        ],
         dist: 'web/stylesheets/css',
         style: 'nested',
         includePaths: [
@@ -85,6 +90,7 @@ gulp.task('sass', function(){
             time:           options.styles.time
         }))
         .pipe(autoprefix('last 4 version'))
+        .pipe(concat('app.css'))
         .pipe(gulp.dest(options.styles.dist))
         .pipe(livereload());
 });
