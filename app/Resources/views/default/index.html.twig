@@ -1,25 +1,25 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}Web Applications Developer in Portland OR - WordPress, Drupal, and ASP.NET web development{% endblock %}
 {% block body %}
     <nav data-sticky-container class="top-navi">
         <div data-sticky data-options="marginTop:0;" data-sticky-on="small">
-            <div class="row">
+            <div class="row align-center">
                 <div class="small-12 columns">
                     <div class="top-bar">
                         <div class="top-bar-left">
                             <ul class="dropdown menu">
-                                <li>Robert Parker</li>
+                                <li><a href="{{ path('homepage') }}"><img src="{{ asset('images/min/logo.min.png') }}" alt=""> Robert Parker</a></li>
                             </ul>
                         </div>
                         <div class="top-bar-right align-right">
                             <ul class="horizontal menu" data-dropdown-menu>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-github"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/rparker521" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="https://github.com/yamiko-ninja" target="_blank"><i class="fa fa-github"></i></a></li>
+                                <li><a href="https://twitter.com/yamiko_ninja" target="_blank"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="#" class="accent button">Get an Estimate</a></li>
                             </ul>
                         </div>
-                        <a href="#" class="accent expanded button hide-for-medium">Get an Estimate</a>
+                        <a href="#" class="accent expanded button hide-for-medium estimate-scroll">Get an Estimate</a>
                     </div>
                 </div>
             </div>
@@ -39,10 +39,10 @@
                         building cutting edge websites and web applications.
                     </p>
                     <div class="expanded button-group">
-                        <a href="tel:5032124131" class="button"><i class="fa fa-phone"></i> Call Me</a>
-                        <a href="sms:3607730963" class="button"><i class="fa fa-mobile"></i> Text Me</a>
-                        <a href="mailto:rparker@yamiko.ninja" class="button"><i class="fa fa-envelope"></i> Email Me</a>
-                        <a class="accent button"><i class="fa fa-usd"></i> Get an Estimate</a>
+                        <a href="tel:5032124131" class="button"><i class="fa fa-phone"></i> Call</a>
+                        <a href="sms:3607730963" class="button"><i class="fa fa-mobile"></i> Text</a>
+                        <a href="mailto:rparker@yamiko.ninja" class="button"><i class="fa fa-envelope"></i> Email</a>
+                        <a class="accent button estimate-scroll"><i class="fa fa-usd"></i> Get an Estimate</a>
                     </div>
                 </div>
             </div>

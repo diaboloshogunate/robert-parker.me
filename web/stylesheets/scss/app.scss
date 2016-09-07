@@ -49,10 +49,16 @@ h2 {
 .sticky {
   width: 100%;
   background-color: map-get($foundation-palette, primary);
+  .small-12 {
+    padding: 0;
+  }
 }
 .top-navi {
   width: 100%;
   background-color: map-get($foundation-palette, primary);
+  position: absolute;
+  top: 0;
+  z-index: 2;
 }
 .top-bar {
   padding: 0;
@@ -100,6 +106,9 @@ h2 {
     }
   }
 }
+.top-bar .menu li a, .top-bar .menu li a i {
+  line-height:28px;
+}
 
 // hero
 .hero {
@@ -107,6 +116,7 @@ h2 {
   color: $white;
   text-align: center;
   overflow: hidden;
+  margin-top: rem-calc(90px);
   @include breakpoint(small only) {
     background-image: url('../../images/min/oak-tree.min.jpg');
     background-size: cover;
@@ -116,6 +126,7 @@ h2 {
   @include breakpoint(medium) {
     max-height: 100vh;
     height: auto;
+    margin-top: rem-calc(50px);
   }
   &::after {
     content: " ";
