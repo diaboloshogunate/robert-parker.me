@@ -110,13 +110,20 @@ h2 {
   line-height:28px;
 }
 
+// spacer
+.spacer {
+  margin-top: rem-calc(90px);
+  @include breakpoint(medium) {
+    margin-top: rem-calc(50px);
+  }
+}
+
 // hero
 .hero {
   position: relative;
   color: $white;
   text-align: center;
   overflow: hidden;
-  margin-top: rem-calc(90px);
   @include breakpoint(small only) {
     background-image: url('../../images/min/oak-tree.min.jpg');
     background-size: cover;
@@ -126,7 +133,6 @@ h2 {
   @include breakpoint(medium) {
     max-height: 100vh;
     height: auto;
-    margin-top: rem-calc(50px);
   }
   &::after {
     content: " ";
@@ -325,4 +331,36 @@ h2 {
   background-color:$dark-gray;
   color: $white;
   padding: $global-padding 0;
+}
+
+// login
+.login {
+  padding: $global-padding*4 0;
+}
+
+// main
+main {
+  padding: $global-padding*4 0;
+}
+
+// dahboard navi
+.dashboard-navi {
+  background-color: $dark-gray;
+  padding: 0;
+  hr {
+    margin: 0;
+  }
+  .menu a {
+    color: $white;
+    &:hover {
+      color: map-get($foundation-palette, primary);
+    }
+  }
+  .menu .active a {
+    background-color: map-get($foundation-palette, primary);
+    &:hover {
+      color: $white;
+      background-color: scale_color(map-get($foundation-palette, primary), $lightness: -14%);
+    }
+  }
 }

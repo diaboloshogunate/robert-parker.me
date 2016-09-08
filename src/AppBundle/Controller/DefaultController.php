@@ -32,7 +32,7 @@ class DefaultController extends Controller
      */
     public function adminAction(Request $request)
     {
-        return new \Symfony\Component\HttpFoundation\Response("<h1>Hello Admin</h1>");
+        return $this->render('default/dashboard.html.twig', []);
     }
 
     /**

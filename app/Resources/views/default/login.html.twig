@@ -5,16 +5,21 @@
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    <form action="{{ path('login_check') }}" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}" />
+    <seciton class="row column login">
+        <form action="{{ path('login_check') }}" method="post">
+            <label for="username">Username:
+                <input type="text" id="username" name="_username" value="{{ last_username }}" />
+            </label>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="_password" />
-        <input type="hidden" name="_target_path" value="{{ path('dashboard') }}" />
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+            <label for="password">Password:
+                <input type="password" id="password" name="_password" />
+            </label>
+
+            <input type="hidden" name="_target_path" value="{{ path('dashboard') }}" />
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
 
 
-        <input type="submit" class="primary button" />
-    </form>
+            <input type="submit" class="primary button" value="Log In"/>
+        </form>
+    </seciton>
 {% endblock %}
