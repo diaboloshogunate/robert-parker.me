@@ -1,7 +1,34 @@
 jQuery(document).ready(function() {
     jQuery(document).foundation();
     jQuery('.slick').slick({
+        infinite: true,
         dots: true,
-        arrows: false
+        arrows: false,
+        touchMove: false,
+        swipeToSlide: false
+    });
+    jQuery('.portfolio-slider').slick({
+        lazyLoad: 'ondemand',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.portfolio-nav'
+    });
+    jQuery('.portfolio-nav').slick({
+        lazyLoad: 'ondemand',
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        asNavFor: '.portfolio-slider',
+        dots: false,
+        focusOnSelect: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3
+                }
+            }
+        ]
     });
 });

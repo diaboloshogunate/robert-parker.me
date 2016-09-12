@@ -1,3 +1,21 @@
+// font awesome
+$fa-font-path: "../../libs/font-awesome/fonts";
+
+// slick
+@font-face
+{
+  font-family: 'slick';
+  font-weight: normal;
+  font-style: normal;
+
+  src: url('../../libs/slick-carousel/slick/fonts/slick.eot');
+  src: url('../../libs/slick-carousel/slick/fonts/slick.eot?#iefix') format('embedded-opentype'), url('../../libs/slick-carousel/slick/fonts/slick.woff') format('woff'), url('../../libs/slick-carousel/slick/fonts/slick.ttf') format('truetype'), url('../../libs/slick-carousel/slick/fonts/slick.svg#slick') format('svg');
+}
+.slick-loading .slick-list
+{
+  background-image: none;
+}
+
 //  Foundation for Sites Settings
 //  -----------------------------
 //

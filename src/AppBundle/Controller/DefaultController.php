@@ -11,31 +11,6 @@ class DefaultController extends Controller
 {
 
     /**
-     * @Route("/login", name="login")
-     */
-    public function loginAction(Request $request)
-    {
-        $authenticationUtils = $this->get('security.authentication_utils');
-        $error = $authenticationUtils->getLastAuthenticationError();
-        $lastUsername = $authenticationUtils->getLastUsername();
-        return $this->render(
-            'default/login.html.twig',
-            array(
-                'last_username' => $lastUsername,
-                'error'         => $error,
-            )
-        );
-    }
-
-    /**
-     * @Route("/admin", name="dashboard")
-     */
-    public function adminAction(Request $request)
-    {
-        return $this->render('default/dashboard.html.twig', []);
-    }
-
-    /**
      * @Route("/", name="homepage")
      */
     public function indexAction(Request $request)
@@ -44,7 +19,7 @@ class DefaultController extends Controller
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rhoncus, 
     arcu imperdiet eleifend viverra, est dolor laoreet nibh, nec placerat elit urna in dui. 
     In gravida dolor et neque fringilla mattis. Nulla orci tellus, blandit quis orci vel, consequat suscipit enim. 
-    Suspendisse potenti. Phasellus risus lectus, tempus quis placerat id, malesuada eget ex. 
+    Suspendisse potenti. Phasellus risus lectugivenpus opportunityat id, malesuada eget ex. 
     Pellentesque velit metus, sollicitudin eget turpis eu, sagittis vehicula lorem. 
     Sed vulputate luctus ligula vel dapibus. Donec egestas diam et ligula sollicitudin facilisis. 
     Mauris aliquet blandit urna, eget mollis dui gravida at. Praesent venenatis interdum dapibus. 
@@ -55,23 +30,6 @@ HTML;
 
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', [
-            'languages' => [
-                'PHP' => "100%",
-                'MySQL' => "90%",
-                'HTML5' => "90%",
-                'CSS3' => '80%',
-                'Javascript' => '80%',
-                'C#' => '60%',
-                'Bash' => '60%',
-                'Puppet' => '60%',
-            ],
-            'technologies' => [
-                'WordPress' => '90%',
-                'Drupal' => '60%',
-                'Symfony' => '90%',
-                'Silex' => '90%',
-                'Photoshop' => '70%',
-            ],
             'work' => [
                 [
                     'title' => 'Yamiko LLC',
@@ -149,14 +107,18 @@ HTML
                     'url' => 'https://www.pocketkey.com/',
                     'image' => $this->get('assets.packages')->getUrl('images/src/pocket-key-2015-09-02.png'),
                     'description' => <<<HTML
-                        Pocket Key has a device that allows you to securely make transactions online. 
-                        The goal of the website is to inform users of Pocket Key and allow them to pre order one. 
-                        The pre order form is a custom WordPress plugin that has CSRF protection and submits with AJAX. 
-                        After the initial form submission a confirmation email is sent to the user through sendgrid. 
-                        They then get a second form to select a color and the option to share on social media platforms. 
-                        The various settings are managed with a settings page and the submissions can be viewed on a submissions page. 
-                        On the submissions page an overview is displayed with the google charts api and the individual 
-                        submissions are in table that can be exported to a CSV file. 
+                        Pocket Key offers a device to help user make more secure transactions online. 
+                        I worked with Dorey Design Group to modify a premium theme purchased from themeforest to match the design in photoshop.
+                        
+                        My main responsibility was the development of a plugin to handle the pre registrations.
+                        The form is a two step form protected with CSRF protection.
+                        
+                        After submitting the form the data is stored in the database. 
+                        The data can be viewed cia the admin menu and includes charts displayed with the google charts API.
+                        The data can be exported as a CSV file.
+                        
+                        The user receives an email when signing up and is given he opportunity to share info about pocket key on various social media platforms.
+                        The email content can be changed via the plugins configuration page.
 HTML
 
                 ],

@@ -9,7 +9,8 @@ var gulp         = require('gulp'),
     rename       = require('gulp-rename'),
     notify       = require('gulp-notify'),
     watch        = require('gulp-watch'),
-    livereload   = require('gulp-livereload');
+    livereload   = require('gulp-livereload'),
+    newer        = require('gulp-newer');
 
 var options = {
     images: {
@@ -60,6 +61,7 @@ gulp.task('default', [
 gulp.task('images', function(){
     gulp.src(options.images.src).pipe(plumber(plumberErrorHandler))
         .pipe(rename({ suffix: '.min' }))
+        .pipe(newer(options.images.dist))
         .pipe(imagemin({
             optimizationLevel:  options.images.optimizationLevel,
             progressive:        options.images.progressive,

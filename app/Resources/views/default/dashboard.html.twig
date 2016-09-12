@@ -3,28 +3,28 @@
 {% block body %}
     <div class="expanded row dashboard">
         <div class="shrink columns dashboard-navi">
-            <hr>
-            <ul class="vertical menu">
-                <li {% if app.request.attributes.get('_route') == "dashboard" %}class="active"{% endif %}>
-                    <a href=""><i class="fa fa-fw fa-area-chart"></i> Dashboard</a>
-                </li>
-            </ul>
-            <hr>
-            <ul class="vertical menu">
-                <li><a href=""><i class="fa fa-fw fa-file-text"></i> Pages</a></li>
-                <li><a href=""><i class="fa fa-fw fa-briefcase"></i> Portfolio</a></li>
-                <li><a href=""><i class="fa fa-fw fa-quote-left"></i> Testimonials</a></li>
-                <li><a href=""><i class="fa fa-fw fa-usd"></i> Quote Request</a></li>
-            </ul>
-            <hr>
-            <ul class="vertical menu">
-                <li><a href=""><i class="fa fa-fw fa-users"></i> Users</a></li>
-                <li><a href=""><i class="fa fa-fw fa-gears"></i> Settings</a></li>
-            </ul>
+            {% block dashboard_navi %}
+                <hr>
+                <ul class="vertical menu">
+                    <li {% if app.request.attributes.get('_route') == "dashboard" %}class="active"{% endif %}>
+                        <a href=""><i class="fa fa-fw fa-area-chart"></i> Dashboard</a>
+                    </li>
+                </ul>
+                <hr>
+                <ul class="vertical menu">
+                    <li><a href=""><i class="fa fa-fw fa-file-text"></i> Pages</a></li>
+                    <li><a href=""><i class="fa fa-fw fa-briefcase"></i> Portfolio</a></li>
+                    <li><a href=""><i class="fa fa-fw fa-quote-left"></i> Testimonials</a></li>
+                    <li><a href=""><i class="fa fa-fw fa-usd"></i> Quote Request</a></li>
+                </ul>
+            {% endblock %}
         </div>
         <div class="columns">
             <main>
-                <h1>Page title</h1>
+                {% block dashboard_content %}
+                    <h1>Dashboard Content</h1>
+                    <div>Google Analytics data will one day go here</div>
+                {% endblock %}
             </main>
         </div>
     </div>

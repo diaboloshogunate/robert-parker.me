@@ -1,6 +1,5 @@
-$fa-font-path: "../../libs/font-awesome/fonts";
-@import "font-awesome";
 @import "settings";
+@import "font-awesome";
 @import "foundation";
 @include foundation-everything(true);
 
@@ -191,7 +190,7 @@ h2 {
 }
 
 .technologies {
-  background-color: map-get($foundation-palette, accent);
+  background-color: map-get($foundation-palette, primary);
   padding: $global-padding*2 0;
   color: $white;
   i {
@@ -243,8 +242,23 @@ h2 {
   .slick-dots li button {
     background-color: $dark-gray;
   }
+  .slick-dots li button::before {
+    content: "";
+  }
   .slick-dots li.slick-active button::before {
     background-color: map-get($foundation-palette, primary);
+  }
+  .portfolio-nav {
+    .slick-track {
+      margin: 0 -0.5rem;
+      .slick-slide {
+        margin: 0.5rem;
+        opacity: 0.4;
+        &.slick-current {
+          opacity: 0.8;
+        }
+      }
+    }
   }
 }
 
@@ -264,7 +278,7 @@ h2 {
     position: relative;
   }
   .medium-6 {
-    margin-bottom: $global-margin*2;
+    margin-bottom: $global-margin*4;
     position: relative;
   }
   &:before {
@@ -311,6 +325,16 @@ h2 {
   }
 }
 
+// presentations
+.presentations {
+  padding: $global-padding*4 0;
+  a {
+    @include breakpoint(medium) {
+      margin: 0;
+    }
+  }
+}
+
 // footer
 .footer {
   padding: $global-margin*4 0;
@@ -331,36 +355,4 @@ h2 {
   background-color:$dark-gray;
   color: $white;
   padding: $global-padding 0;
-}
-
-// login
-.login {
-  padding: $global-padding*4 0;
-}
-
-// main
-main {
-  padding: $global-padding*4 0;
-}
-
-// dahboard navi
-.dashboard-navi {
-  background-color: $dark-gray;
-  padding: 0;
-  hr {
-    margin: 0;
-  }
-  .menu a {
-    color: $white;
-    &:hover {
-      color: map-get($foundation-palette, primary);
-    }
-  }
-  .menu .active a {
-    background-color: map-get($foundation-palette, primary);
-    &:hover {
-      color: $white;
-      background-color: scale_color(map-get($foundation-palette, primary), $lightness: -14%);
-    }
-  }
 }
