@@ -37,12 +37,12 @@ var options = {
             'web/stylesheets/scss/**/*.scss'
         ],
         dist: 'web/stylesheets/css',
-        style: 'nested',
+        style: 'compressed',
         includePaths: [
             'web/libs/font-awesome/scss',
             'web/libs/foundation-sites/scss'
         ],
-        sourceComments: true
+        sourceComments: false
     }
 };
 
