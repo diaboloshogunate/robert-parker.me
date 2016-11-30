@@ -28,10 +28,10 @@
                                         <li><a href="https://www.linkedin.com/in/rparker521" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                                         <li><a href="https://github.com/yamiko-ninja" target="_blank"><i class="fa fa-github"></i></a></li>
                                         <li><a href="https://twitter.com/yamiko_ninja" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                        {#<li><a href="#" class="accent button">Estimate</a></li>#}
+                                        <li><a href="#" class="accent button estimate-scroll">Estimate</a></li>
                                     </ul>
                                 </div>
-                                {#<a href="#" class="accent expanded button hide-for-medium estimate-scroll">Estimate</a>#}
+                                <a href="#" class="accent expanded button hide-for-medium estimate-scroll">Estimate</a>
                             </div>
                         </div>
                     </div>
@@ -40,6 +40,7 @@
             <div class="spacer"></div>
         {% endblock %}
         {% block body %}{% endblock %}
+        {% include "sections/copyright.html.twig" %}
         {% block javascripts %}
             <script src="{{ asset('scripts/app.min.js') }}"></script>
         {% endblock %}

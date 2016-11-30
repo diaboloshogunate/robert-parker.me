@@ -1,82 +1,58 @@
 <footer class="footer">
     <div class="row column">
         <h2>How Can I help?</h2>
-        <form action="#">
+        {{ form_start(form, { attr: {novalidate: 'novalidate'} }) }}
+        {% form_theme form 'form/foundation.html.twig' %}
+            {{ form_errors(form) }}
             <div class="row">
                 <div class="small-12 medium-8 large-6 columns">
                     <div class="row">
                         <div class="small-6 columns">
-                            <label for="">
-                                Name
-                                <input type="text" />
-                            </label>
+                            {{ form_row(form.name) }}
+                            {{ form_errors(form.name) }}
                         </div>
                         <div class="small-6 columns">
-                            <label for="">
-                                Company
-                                <input type="text" />
-                            </label>
+                            {{ form_row(form.company) }}
+                            {{ form_errors(form.company) }}
                         </div>
                     </div>
                     <div class="row">
                         <div class="small-6 columns">
-                            <label for="">
-                                Email
-                                <input type="text" />
-                            </label>
+                            {{ form_row(form.email) }}
+                            {{ form_errors(form.email) }}
                         </div>
                         <div class="small-6 columns">
-                            <label for="">
-                                Phone
-                                <input type="text" />
-                            </label>
+                            {{ form_row(form.phone) }}
+                            {{ form_errors(form.phone) }}
                         </div>
                     </div>
                     <div class="row">
                         <div class="small-6 columns">
-                            <label for="">
-                                Service
-                                <select name="">
-                                    <option value="">Web Development</option>
-                                    <option value="">Application Development</option>
-                                    <option value="">API Integration</option>
-                                    <option value="">Consulting</option>
-                                </select>
-                            </label>
+                            {{ form_row(form.service) }}
+                            {{ form_errors(form.service) }}
                         </div>
                         <div class="small-6 columns">
-                            <label for="">
-                                Timeline
-                                <input type="date" />
-                            </label>
+                            {{ form_row(form.timeline) }}
+                            {{ form_errors(form.timeline) }}
                         </div>
                     </div>
                     <label for="">
-                        Budget
-                        <select name="">
-                            <option value="">$2,000 or less</option>
-                            <option value="">$2,000 - $5,000</option>
-                            <option value="">$5,000 - $10,000</option>
-                            <option value="">$10,000 - $25,000</option>
-                            <option value="">$25,000 - $50,000</option>
-                            <option value="">$50,000 or more</option>
-                        </select>
+                        {{ form_row(form.budget) }}
+                        {{ form_errors(form.budget) }}
                     </label>
                     <label for="">
-                        Attach a file?
-                        <input type="file">
+                        {{ form_row(form.attachment) }}
+                        {{ form_errors(form.attachment) }}
                     </label>
                 </div>
                 <div class="small-12 medium-4 large-6 columns">
-                    <label for="">
-                        Details
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                    </label>
+                    {{ form_row(form.details) }}
+                    {{ form_errors(form.details) }}
                 </div>
             </div>
             <div class="text-center">
                 <input type="submit" value="get started" class="accent button">
             </div>
-        </form>
+        {{ form_end(form) }}
     </div>
 </footer>

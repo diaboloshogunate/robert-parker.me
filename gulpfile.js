@@ -24,6 +24,7 @@ var options = {
     scripts: {
         src: [
             'web/libs/jquery/dist/jquery.js',
+            'web/libs/jquery-ui/jquery-ui.js',
             'web/libs/foundation-sites/dist/foundation.js',
             'web/libs/slick-carousel/slick/slick.js',
             'web/scripts/app.js'
