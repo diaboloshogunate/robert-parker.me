@@ -69,6 +69,9 @@ section > .row > h2 {
 .button {
   text-transform: uppercase;
   font-weight: bold;
+  &.accent {
+    color: $white;
+  }
 }
 
 // headings
