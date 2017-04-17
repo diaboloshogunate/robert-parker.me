@@ -62,12 +62,13 @@ gulp.task('default', [
 gulp.task('images', function(){
     gulp.src(options.images.src).pipe(plumber(plumberErrorHandler))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(newer(options.images.dist))
+        //.pipe(newer(options.images.dist))
         .pipe(imagemin({
             optimizationLevel:  options.images.optimizationLevel,
             progressive:        options.images.progressive,
             interlaced:         options.images.interlaced,
-            multipass:          options.images.multipass
+            multipass:          options.images.multipass,
+            verbose: true
         }))
         .pipe(gulp.dest(options.images.dist))
         .pipe(livereload());
@@ -86,7 +87,7 @@ gulp.task('scripts', function(){
 gulp.task('sass', function(){
     gulp.src(options.styles.src).pipe(plumber(plumberErrorHandler))
         .pipe(sass({
-            style:          options.scripts.style,
+            outputStyle:    options.styles.style,
             includePaths:   options.styles.includePaths,
             comments:       options.styles.comments,
             sourceComments: options.styles.sourceComments,

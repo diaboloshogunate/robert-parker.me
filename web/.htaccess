@@ -66,3 +66,9 @@ DirectoryIndex app.php
         # RedirectTemp cannot be used instead
     </IfModule>
 </IfModule>
+
+<FilesMatch "\.(?i:gif|jpe?g|png|ico|css|js|swf)$">
+    <IfModule mod_headers.c>
+        Header set Cache-Control "max-age=6000000, public, must-revalidate"
+    </IfModule>
+</FilesMatch>

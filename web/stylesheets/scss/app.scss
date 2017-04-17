@@ -69,7 +69,7 @@ section > .row > h2 {
 .button {
   text-transform: uppercase;
   font-weight: bold;
-  &.accent {
+  &.accent, &.accent:hover {
     color: $white;
   }
 }
@@ -158,6 +158,7 @@ h2 {
   color: $white;
   text-align: center;
   overflow: hidden;
+  background-color: get-color(primary);
   @include breakpoint(small only) {
     background-image: url('../../images/min/oak-tree.min.jpg');
     background-size: cover;
@@ -227,6 +228,9 @@ h2 {
   background-color: map-get($foundation-palette, primary);
   padding: $global-padding*2 0;
   color: $white;
+  h2 {
+    margin-bottom: $global-margin*4;
+  }
   i {
     font-size: 3rem;
     margin-bottom: $global-margin/2;
@@ -266,32 +270,34 @@ h2 {
 }
 
 .portfolio {
-  padding: $global-margin*4 0 $global-margin;
-  .text-center {
-    margin-bottom: $global-margin*3;
-  }
-  img {
-    margin-bottom: $global-margin;
-  }
-  .slick-dots li button {
-    background-color: $dark-gray;
-  }
-  .slick-dots li button::before {
-    content: "";
-  }
-  .slick-dots li.slick-active button::before {
-    background-color: map-get($foundation-palette, primary);
-  }
-  .portfolio-nav {
-    .slick-track {
-      margin: 0 -0.5rem;
-      .slick-slide {
-        margin: 0.5rem;
-        opacity: 0.4;
-        &.slick-current {
-          opacity: 0.8;
-        }
+  .column {
+    position: relative;
+    &:hover {
+      .hover {
+        opacity: 1;
       }
+    }
+    img {
+      width: 100%;
+    }
+    h4 {
+      color: $white;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 100%;
+    }
+    .hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(get-color(primary), 0.8);
+      transition: opacity 1000ms ease;
+      opacity: 0;
     }
   }
 }
@@ -310,6 +316,7 @@ h2 {
   }
   h2 {
     position: relative;
+    margin-bottom: $global-margin*4;
   }
   .medium-6 {
     margin-bottom: $global-margin*4;

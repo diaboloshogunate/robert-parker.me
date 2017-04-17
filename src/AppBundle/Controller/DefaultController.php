@@ -53,7 +53,6 @@ class DefaultController extends Controller
             return $this->render('default/confirmation.html.twig');
         }
 
-        // replace this example code with whatever you need
         return $this->render('default/index.html.twig', [
             'form' => $form->createView(),
         ]);
@@ -73,7 +72,6 @@ class DefaultController extends Controller
      */
     public function confirmationAction(Request $request)
     {
-        // replace this example code with whatever you need
         return $this->render('default/confirmation.html.twig');
     }
 
@@ -121,6 +119,7 @@ class DefaultController extends Controller
                     'Application Development' => 'app',
                     'API Integration' => 'api',
                     'Consulting' => 'consult',
+                    'Other' => 'other',
                 ]
             ])
             ->add('timeline', Type\DateType::class, [
