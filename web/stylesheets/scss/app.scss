@@ -36,13 +36,12 @@
 }
 
 // utility classes
-
 @each $name, $value in $foundation-palette {
   .text-#{$name} {
-    color: $value;
+    color: $value !important;
   }
   .bg-#{$name} {
-    background-color: $value;
+    background-color: $value !important;
   }
 }
 
@@ -71,6 +70,29 @@ section > .row > h2 {
   font-weight: bold;
   &.accent, &.accent:hover {
     color: $white;
+  }
+}
+
+// pricing tables
+.pricing-table {
+  text-align: center;
+  border-collapse: collapse;
+  thead {
+    background-color: $dark-gray;
+    color: $white;
+    th {
+      text-align: center;
+      font-size: rem-calc(30px);
+    }
+    td.description {
+      text-align: center;
+      font-size: rem-calc(16px);
+      font-weight: normal;
+      font-style: italic;
+    }
+  }
+  .price {
+    font-size: rem-calc(80px);
   }
 }
 
@@ -305,32 +327,7 @@ h2 {
 // services
 .services {
   padding: $global-margin*4 0 $global-margin*2 0;
-  background-image: url('../../images/min/php-code.min.jpg');
-  background-size: cover;
-  color: $white;
-  text-align: center;
-  position: relative;
-  i.fa {
-    font-size: 6rem;
-    margin-bottom: $global-margin;
-  }
-  h2 {
-    position: relative;
-    margin-bottom: $global-margin*4;
-  }
-  .medium-6 {
-    margin-bottom: $global-margin*4;
-    position: relative;
-  }
-  &:before {
-    content: " ";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba($black, 0.8);
-  }
+  background-color: $light-gray;
 }
 
 // testimonials

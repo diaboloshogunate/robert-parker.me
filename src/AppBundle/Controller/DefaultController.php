@@ -14,6 +14,14 @@ class DefaultController extends Controller
 {
 
     /**
+     * @Route("/web-services", name="services")
+     */
+    public function servicesAction(Request $request)
+    {
+        return $this->render('default/services.html.twig', []);
+    }
+
+    /**
      * @Route("/", name="homepage")
      */
     public function indexAction(Request $request)

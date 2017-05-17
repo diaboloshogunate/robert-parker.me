@@ -21,8 +21,18 @@ jQuery(document).ready(function() {
     });
 
     jQuery('.estimate-scroll').on('click', function(){
-        $('html, body').animate({
-            scrollTop: $(".footer form").offset().top
+        jQuery('html, body').animate({
+            scrollTop: jQuery(".footer form").offset().top
         }, 2000);
+    });
+
+    jQuery('a[target=_blank]').on("click", function(a){
+        ga('send', 'event', {
+            eventCategory: 'Outbound Link',
+            eventAction: 'click',
+            eventLabel: jQuery(this).attr('href'),
+            transport: 'beacon'
+        });
+
     });
 });
