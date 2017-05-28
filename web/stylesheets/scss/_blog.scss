@@ -1,0 +1,27 @@
+.blog-list {
+  padding: $global-padding*2 0;
+}
+.blog-teaser {
+  padding: $global-padding;
+  box-shadow: 0 0 8px rgba(0,0,0,0.8);
+  transition: transform 1000ms, box-shadow 1000ms;
+  background-color: $body-background;
+  &:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 16px rgba(0,0,0,0.8);
+  }
+  a {
+    color: $body-font-color;
+  }
+  .published {
+    color: $medium-gray;
+    font-style: italic;
+  }
+}
+.blog-view {
+  padding: $global-padding*2 0;
+  .published {
+    color: $medium-gray;
+    font-style: italic;
+  }
+}

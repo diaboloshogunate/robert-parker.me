@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+{% block title %}WordPress and Symfony Developer in Portland OR - Blog{% endblock %}
+{% block body %}
+    <main class="page-content">
+        <section class="page-title">
+            <div class="row columns">
+                <h1>{% if title is defined %}{{ title }}{% else %}Blog{% endif %}</h1>
+            </div>
+        </section>
+        <section class="blog-list">
+            <div class="row small-up-2 medium-up-3 large-up-4">
+                {% for post in posts %}
+                    <div class="column">
+                        {% include 'blog/teaser.html.twig' %}
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+        <section class="page-pagination">
+            <div class="small-12 columns">
+                <ul class="pagination text-center" role="navigation" aria-label="Pagination">
+                    {% if page > 1 %}
+                        <li class="pagination-previous">
+                            <a href="{{ url('blog_list', {page: page-1}) }}" aria-label="Previous Page">
+                                Previous
+                                <span class="show-for-sr">page</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% for i in 1..pages %}
+                        {% if page == i %}
+                            <li class="current">
+                                <span class="show-for-sr">You're on page</span>
+                                {{ i }}
+                            </li>
+                        {% else %}
+                            <li>
+                                <a href="{{ url('blog_list', {page: i}) }}" aria-label="Page {{ i }}">
+                                    {{ i }}
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if page < pages %}
+                        <li class="pagination-next">
+                            <a href="{{ url('blog_list', {page: page+1}) }}" aria-label="Next page">
+                                Next
+                                <span class="show-for-sr">page</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </section>
+    </main>
+{% endblock %}

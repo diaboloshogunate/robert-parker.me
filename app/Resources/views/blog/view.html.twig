@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block title %}WordPress and Symfony Developer in Portland OR - Blog{% endblock %}
+{% block body %}
+    <section class="row">
+        <div class="small-12 medium-8 columns">
+            <article class="blog-view">
+                <h1>{{ post.title }}</h1>
+                <p class="published">Published: {{ post.createdOn | date('F jS Y') }}</p>
+                {{ post.content | raw }}
+            </article>
+        </div>
+        <div class="small-12 medium-4 columns">
+            <div class="sidebar">
+                <aside>
+                    <h4>Categories</h4>
+                    {% for tag in post.taxonomy %}
+                        <a href="{{ url('blog_taxonomy', {tag: tag}) }}" class="button">{{ tag }}</a>
+                    {% endfor %}
+                </aside>
+            </div>
+        </div>
+    </section>
+{% endblock %}

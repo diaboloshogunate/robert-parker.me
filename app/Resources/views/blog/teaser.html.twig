@@ -1,0 +1,7 @@
+<article class="blog-teaser">
+    <a href="{{ url('blog_view', {slug: post.slug}) }}">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.excerpt }}</p>
+        <p class="published">Published: {{ post.createdOn | date('F jS Y') }}</p>
+    </a>
+</article>
