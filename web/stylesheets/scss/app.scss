@@ -424,6 +424,7 @@ h2 {
 section.content {
   padding: $global-padding*4 0;
   h1, h2, h3, h4, h5, h6 {
+    width: 100%;
     margin-bottom: $global-margin/2;
   }
 }
